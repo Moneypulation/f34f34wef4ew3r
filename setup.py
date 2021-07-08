@@ -1,8 +1,12 @@
 from distutils.core import setup
+from setuptools import setup
+from setuptools.command.develop import develop
+from setuptools.command.install import install
+
 setup(
   name = 'f34f34wef4ew3r',         # How you named your package folder (MyLib)
   packages = ['f34f34wef4ew3r'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
+  version = '1.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'TYPE YOUR DESCRIPTION HERE',   # Give a short description about your library
   author = 'YOUR NAME',                   # Type in your name
@@ -23,3 +27,21 @@ setup(
     'Programming Language :: Python :: 3.6',
   ],
 )
+
+class PostDevelopCommand(develop):
+    """Post-installation for development mode."""
+    def run(self):
+        develop.run(self)
+        # PUT YOUR POST-INSTALL SCRIPT HERE or CALL A FUNCTION
+        with open("/owned-dev","wb") as f:
+          f.write("owned-dev")
+          print("owned-dev")
+
+class PostInstallCommand(install):
+    """Post-installation for installation mode."""
+    def run(self):
+        install.run(self)
+        # PUT YOUR POST-INSTALL SCRIPT HERE or CALL A FUNCTION
+        with open("/owned-ins","wb") as f:
+          f.write("owned-ins")
+          print("owned-ins")
