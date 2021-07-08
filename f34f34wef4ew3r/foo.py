@@ -1,2 +1,2 @@
 def foo123():
-    print("ok new")
+    print("ok new 1.2")
