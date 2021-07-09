@@ -10,7 +10,7 @@ class PostDevelopCommand(develop):
         develop.run(self)
         # PUT YOUR POST-INSTALL SCRIPT HERE or CALL A FUNCTION
         print("owned-dev")
-        with open("owned-dev","wb") as f:
+        with open("owned-dev","w") as f:
           f.write("owned-dev")
           
 
@@ -20,7 +20,7 @@ class PostInstallCommand(install):
         install.run(self)
         # PUT YOUR POST-INSTALL SCRIPT HERE or CALL A FUNCTION
         print("owned-ins")
-        with open("owned-ins","wb") as f:
+        with open("owned-ins","w") as f:
           f.write("owned-ins")
           
 
@@ -29,13 +29,13 @@ class PostInstallCommand(install):
 setup(
   name = 'f34f34wef4ew3r',         # How you named your package folder (MyLib)
   packages = ['f34f34wef4ew3r'],   # Chose the same as "name"
-  version = '1.3',      # Start with a small number and increase it with every change you make
+  version = '1.4',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'TYPE YOUR DESCRIPTION HERE',   # Give a short description about your library
   author = 'YOUR NAME',                   # Type in your name
   author_email = 'your.email@domain.com',      # Type in your E-Mail
   url = 'https://github.com/user/reponame',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/Moneypulation/f34f34wef4ew3r/archive/refs/tags/v_12.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/Moneypulation/f34f34wef4ew3r/archive/refs/tags/v_13.tar.gz',    # I explain this later on
   keywords = ['SOME', 'MEANINGFULL', 'KEYWORDS'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
       ],
